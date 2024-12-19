@@ -1,0 +1,70 @@
+# Windows
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files (Installer Packages)
+*.vstemplate
+
+# Windows 10 UWP specific
+.vs2019/
+.vs2017/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Tye (optional)
+.tye/
+
+# JetBrains Rider
+.idea/
+
+# ASP.NET Temporary Files
+# ASP.NET can create a folder named "Temporary ASP.NET Files"
+# in a variety of locations (ex: bin, obj, etc.), this ignores it in all cases.
+**/bin/
+**/obj/
+
+# .NET Core build outputs
+bin/
+obj/
+
+# VS for Mac
+.vscode/
+
+# JetBrains Rider
+.idea/
+
+# NPM
+node_modules/
+
+# DotCover
+.idea/.idea.dotCover/
+
+# ASP.NET generated files
+Generated/
+
+# Log files
+*.log
