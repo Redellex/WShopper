@@ -1,4 +1,5 @@
 using WShopper;
+using WShopper.Bazar;
 using WShopper.Shop1;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,15 @@ app.MapGet("/netShop",  async (string query = "") =>
         return ads;
     })
     .WithName("netShop")
+    .WithOpenApi();
+
+app.MapPost("/bazarShop",  async (string query = "") =>
+    {
+        var bazarShop = new BazarShopClient(config.BazarShop);
+        var ads = await bazarShop.QuerySearch(query);
+        return ads;
+    })
+    .WithName("bazarShop")
     .WithOpenApi();
 
 app.Run();
