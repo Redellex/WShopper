@@ -1,5 +1,8 @@
 ﻿{
    "NetShop": {
-     "BaseUrl": "https://www.netgun.pl/"
-   }
+     "BaseUrl": ""
+   },
+  "BazarShop": {
+    "BaseUrl": ""
+  }
 }
