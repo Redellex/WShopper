@@ -1,0 +1,6 @@
+@WShopper_HostAddress = http://localhost:5195
+
+GET {{WShopper_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
