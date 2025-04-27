@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WShopper", "WShopper\WShopper.csproj", "{46F99270-9699-4072-A7DE-B7A455848525}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WShopperFrontend", "WShopperFrontend\WShopperFrontend.csproj", "{9F3D7B74-F6D5-4BDC-92E1-79FD1D50374C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{46F99270-9699-4072-A7DE-B7A455848525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46F99270-9699-4072-A7DE-B7A455848525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46F99270-9699-4072-A7DE-B7A455848525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F3D7B74-F6D5-4BDC-92E1-79FD1D50374C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3D7B74-F6D5-4BDC-92E1-79FD1D50374C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3D7B74-F6D5-4BDC-92E1-79FD1D50374C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3D7B74-F6D5-4BDC-92E1-79FD1D50374C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
