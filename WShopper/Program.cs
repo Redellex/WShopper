@@ -26,7 +26,7 @@ app.MapGet("/netShop",  async (string query = "") =>
     .WithName("netShop")
     .WithOpenApi();
 
-app.MapPost("/bazarShop",  async (string query = "") =>
+app.MapGet("/bazarShop",  async (string query = "") =>
     {
         var bazarShop = new BazarShopClient(config.BazarShop);
         var ads = await bazarShop.QuerySearch(query);
