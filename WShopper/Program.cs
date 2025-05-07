@@ -1,3 +1,4 @@
+using System.Net;
 using WShopper;
 using WShopper.Bazar;
 using WShopper.Day;
@@ -8,6 +9,9 @@ var config = ConfigHandler.GetConfig();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
+
 
 var app = builder.Build();
 

@@ -9,10 +9,12 @@ public class NetShopClient
     private string searchEndpoint = "wyszukiwanie";
 
     private RestClient client;
+    private string baseUrl = "";
 
     public NetShopClient(NetShop netShopConfig)
     {
-        client = new RestClient(netShopConfig.BaseUrl);
+        this.baseUrl = netShopConfig.BaseUrl;
+        this.client = new RestClient(netShopConfig.BaseUrl);
     }
 
     public async Task<List<AdModel>> QuerySearch(string query)
@@ -44,7 +46,7 @@ public class NetShopClient
             string link = linkNode != null ? linkNode.GetAttributeValue("href", "") : "";
 
             var ImageNode = adNode.SelectSingleNode(".//div[@class='thumb']/img");
-            var imageUrl  = ImageNode != null ? ImageNode.GetAttributeValue("src", "").Trim() : "";
+            var imageUrl  = ImageNode != null ? this.baseUrl.TrimEnd('/') + ImageNode.GetAttributeValue("src", "").Trim() : "";
 
             var ad = new AdModel
             {
