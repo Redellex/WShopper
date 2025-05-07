@@ -6,8 +6,10 @@
 
 <PageTitle>WShopper</PageTitle>
 <div class="search-container">
-    <input @bind="searchText" placeholder="Wpisz szukaną frazę..." class="search-box" type="search" />
-    <button @onclick="OnSearchClicked">Szukaj</button>    
+    <form @onsubmit="OnSearchClicked">
+        <input @bind="searchText" placeholder="Wpisz szukaną frazę..." type="search"/>
+        <button @onclick="OnSearchClicked">Szukaj</button>
+    </form>
 </div>
 
 
@@ -42,7 +44,7 @@ else
 @code {
     private bool isLoading = false;
     private bool firstSearch = true;
-    private List<AdModel> offers;
+    private List<AdModel> offers = new List<AdModel>();
     private string searchText = ""; // tekst wyszukiwania
     
     private async Task OnSearchClicked()
