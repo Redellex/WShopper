@@ -1,0 +1,55 @@
+﻿@page "/"
+@using global::WShopper.Models
+@rendermode InteractiveServer
+
+@inject Service Service
+
+<PageTitle>WShopper</PageTitle>
+<div class="search-container">
+    <input @bind="searchText" placeholder="Wpisz szukaną frazę..." class="search-box" type="search" />
+    <button @onclick="OnSearchClicked">Szukaj</button>    
+</div>
+
+
+@if (isLoading)
+{ 
+    <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Ładowanie...</span>
+        </div>
+    </div>
+}else if (firstSearch == true)
+{
+}else if (offers.Count == 0 && firstSearch == false)
+{
+    <p>Brak ofert pasujących do wyszukiwania.</p>
+}
+else
+{
+    <div class="offer-container">
+        @foreach (var offer in offers)
+        {
+            <div class="offer-tile">
+                <img src="@offer.Image" alt="@offer.Title" class="offer-image" />
+                <h4 class="offer-title">@offer.Title</h4>
+                <p>@offer.Price</p>
+                <p>@offer.Description</p>
+                <a href="@offer.Link" target="_blank">Zobacz szczegóły</a>
+            </div>
+        }
+    </div>
+}
+@code {
+    private bool isLoading = false;
+    private bool firstSearch = true;
+    private List<AdModel> offers;
+    private string searchText = ""; // tekst wyszukiwania
+    
+    private async Task OnSearchClicked()
+    {
+        isLoading = true;
+        offers = await Service.GetAds(searchText);
+        firstSearch = false;
+        isLoading = false;
+    }
+}
